@@ -1,5 +1,8 @@
 package com.example.myrecipeapp
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
 /*
 "idCategory": "1",
 "strCategory": "Beef",
@@ -8,12 +11,13 @@ package com.example.myrecipeapp
 */
 
 // 1 - Define Category data class
+@Parcelize
 data class Category (
     val idCategory: String,
     val strCategory: String,
     val strCategoryThumb: String,
     val strCategoryDescription: String
-)
+):Parcelable
 
 // 2 - Define Categories Response
 data class CategoriesResponse(val categories: List<Category>)
